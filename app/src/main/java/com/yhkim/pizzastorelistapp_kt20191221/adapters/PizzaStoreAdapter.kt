@@ -25,7 +25,7 @@ class PizzaStoreAdapter(context:Context, resId:Int, list:ArrayList<PizzaStore>) 
 
         var data = mList.get(position)
 
-        var pizzaNm = row.findViewById<TextView>(R.id.pizzaCompNm)
+        var pizzaNm = row.findViewById<TextView>(R.id.nameTxt)
 
         pizzaNm.text = data.storeName
 
