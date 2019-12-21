@@ -28,7 +28,7 @@ class PizzaStoreDetailActivity : BaseActivity() {
         callBtn.setOnClickListener {
             val listener = object : PermissionListener {
                 override fun onPermissionGranted() {
-                    var uri = Uri.parse("${mPizzaStoreData?.phoneNum}")
+                    var uri = Uri.parse("tel:${mPizzaStoreData?.phoneNum}")
                     val intent  = Intent(Intent.ACTION_CALL, uri)
                     startActivity(intent)
                 }
@@ -41,7 +41,7 @@ class PizzaStoreDetailActivity : BaseActivity() {
             TedPermission.with(mContext)
                 .setPermissionListener(listener)
                 .setDeniedMessage("권한설정이 필요합니다.")
-                .setRationaleMessage("바로 전화를 걸기 위해 필요합니다.")
+//                .setRationaleMessage("바로 전화를 걸기 위해 필요합니다.")
                 .setPermissions(Manifest.permission.CALL_PHONE)
                 .check()
 
