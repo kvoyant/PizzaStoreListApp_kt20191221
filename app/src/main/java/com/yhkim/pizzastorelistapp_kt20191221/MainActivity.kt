@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.yhkim.pizzastorelistapp_kt20191221.adapters.PizzaStoreAdapter
 import com.yhkim.pizzastorelistapp_kt20191221.datas.PizzaStore
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
@@ -24,7 +25,8 @@ class MainActivity : BaseActivity() {
     override fun setValues() {
         addPizzaStores()
 
-        pizzaStoreAdapter = PizzaStoreAdapter(this, R.layout.pizza_list_item, pizzaStoreList)
+        pizzaStoreAdapter = PizzaStoreAdapter(mContext, R.layout.pizza_list_item, pizzaStoreList)
+        pizzaListView.adapter = pizzaStoreAdapter//어댑터와 리스트뷰 연결 !! 연결해야 나온다!!
     }
 
     fun addPizzaStores() {
