@@ -1,5 +1,6 @@
 package com.yhkim.pizzastorelistapp_kt20191221
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.yhkim.pizzastorelistapp_kt20191221.adapters.PizzaStoreAdapter
@@ -20,6 +21,14 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        pizzaListView.setOnItemClickListener { parent, view, position, id ->
+            val clickedPizzaData = pizzaStoreList.get(position)
+
+            val intent = Intent(mContext, PizzaStoreDetailActivity::class.java)
+            intent.putExtra("pizzaStoreData", clickedPizzaData)
+            startActivity(intent)
+        }
     }
 
     override fun setValues() {
