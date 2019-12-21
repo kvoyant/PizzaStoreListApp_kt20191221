@@ -1,11 +1,13 @@
 package com.yhkim.pizzastorelistapp_kt20191221
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.yhkim.pizzastorelistapp_kt20191221.adapters.PizzaStoreAdapter
 import com.yhkim.pizzastorelistapp_kt20191221.datas.PizzaStore
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_pizza_store_detail.*
 
 class MainActivity : BaseActivity() {
 
